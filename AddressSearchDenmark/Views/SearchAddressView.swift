@@ -18,11 +18,8 @@ struct SearchAddressView: View {
             VStack {
                 SearchBar(searchText: $viewModel.searchText, isLoading: $viewModel.isLoading)
                 List(viewModel.addresses) { address in
-                    NavigationLink(destination: Text("Detail for \(address.title)")) {
-                        VStack(alignment: .leading) {
-                            Text(address.title).font(.headline)
-                            Text(address.subtitle)
-                        }.frame(height: 65)
+                    NavigationLink(destination: AddressMapView(viewModel: .init(address: address))) {
+                        AddressRow(address: address)
                     }
                 }
                 .navigationBarTitle(Text("Search"))

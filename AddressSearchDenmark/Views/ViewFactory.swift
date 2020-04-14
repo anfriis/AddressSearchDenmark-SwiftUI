@@ -17,4 +17,9 @@ struct ViewFactory {
         )
         return SearchAddressView(viewModel: viewModel)
     }
+    
+    static func makeAddressMapView() -> some View {
+        let viewModel = AddressMapViewModel(address: Address.default)
+        return AddressMapView(viewModel: viewModel)
+    }
 }
