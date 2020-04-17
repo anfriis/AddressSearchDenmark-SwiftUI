@@ -10,17 +10,27 @@
 		9A4B0C2A243E0615009EA3EC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4B0C29243E0615009EA3EC /* String.swift */; };
 		9A4B0C2D243E0951009EA3EC /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4B0C2C243E0951009EA3EC /* NetworkClient.swift */; };
 		9A4B0C2F243E0983009EA3EC /* AddressAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4B0C2E243E0983009EA3EC /* AddressAPI.swift */; };
+		9A4C7EEA2446F27D009E9B9E /* CreateAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C7EE92446F27D009E9B9E /* CreateAddressView.swift */; };
+		9A4C7EEC2446F9C2009E9B9E /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C7EEB2446F9C2009E9B9E /* FormTextField.swift */; };
+		9A4C7EEE244700F6009E9B9E /* CreateAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C7EED244700F6009E9B9E /* CreateAddressViewModel.swift */; };
+		9A4C7EF0244704DE009E9B9E /* RespondingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C7EEF244704DE009E9B9E /* RespondingTextField.swift */; };
 		9A6AE09A243F223F00AE8AAE /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6AE099243F223F00AE8AAE /* ViewFactory.swift */; };
 		9A6AE09C243F2D4F00AE8AAE /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6AE09B243F2D4F00AE8AAE /* ActivityIndicator.swift */; };
 		9A6AE09F243F31AA00AE8AAE /* SwiftUI+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6AE09E243F31AA00AE8AAE /* SwiftUI+View.swift */; };
 		9A6AE0A1243F31D800AE8AAE /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6AE0A0243F31D800AE8AAE /* ViewModifiers.swift */; };
+		9AA869B72447320A00D4559B /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA869B62447320A00D4559B /* AppButton.swift */; };
+		9AA869BA24474BCA00D4559B /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA869B924474BCA00D4559B /* InputValidation.swift */; };
+		9AA869BD24486D1400D4559B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA869BC24486D1400D4559B /* Colors.swift */; };
+		9AA869BF24486E8A00D4559B /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA869BE24486E8A00D4559B /* UserData.swift */; };
 		9AB69C342445C8EB00DFB9EC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB69C332445C8EB00DFB9EC /* MapView.swift */; };
 		9AB69C362445CC3700DFB9EC /* AddressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB69C352445CC3700DFB9EC /* AddressRow.swift */; };
 		9AB69C382445CE1A00DFB9EC /* AddressMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB69C372445CE1A00DFB9EC /* AddressMapView.swift */; };
 		9AB69C3A2445CE3800DFB9EC /* AddressMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB69C392445CE3800DFB9EC /* AddressMapViewModel.swift */; };
 		9AB69C3C2445D1F000DFB9EC /* AddressAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB69C3B2445D1F000DFB9EC /* AddressAnnotation.swift */; };
-		9AB69C3E2445D52800DFB9EC /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB69C3D2445D52800DFB9EC /* DraggableCardView.swift */; };
+		9AB69C3E2445D52800DFB9EC /* DraggableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB69C3D2445D52800DFB9EC /* DraggableCard.swift */; };
 		9AB69C422445EB5E00DFB9EC /* Handle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB69C412445EB5E00DFB9EC /* Handle.swift */; };
+		9AC642062449EF6D0042355A /* AddressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC642052449EF6D0042355A /* AddressResponse.swift */; };
+		9AC6420A2449F0F30042355A /* AddressList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC642092449F0F30042355A /* AddressList.swift */; };
 		9AD42ACC243DF05E0032D617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD42ACB243DF05E0032D617 /* AppDelegate.swift */; };
 		9AD42ACE243DF05E0032D617 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD42ACD243DF05E0032D617 /* SceneDelegate.swift */; };
 		9AD42AD2243DF05F0032D617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AD42AD1243DF05F0032D617 /* Assets.xcassets */; };
@@ -49,17 +59,27 @@
 		9A4B0C29243E0615009EA3EC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9A4B0C2C243E0951009EA3EC /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		9A4B0C2E243E0983009EA3EC /* AddressAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAPI.swift; sourceTree = "<group>"; };
+		9A4C7EE92446F27D009E9B9E /* CreateAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAddressView.swift; sourceTree = "<group>"; };
+		9A4C7EEB2446F9C2009E9B9E /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		9A4C7EED244700F6009E9B9E /* CreateAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAddressViewModel.swift; sourceTree = "<group>"; };
+		9A4C7EEF244704DE009E9B9E /* RespondingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespondingTextField.swift; sourceTree = "<group>"; };
 		9A6AE099243F223F00AE8AAE /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		9A6AE09B243F2D4F00AE8AAE /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		9A6AE09E243F31AA00AE8AAE /* SwiftUI+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+View.swift"; sourceTree = "<group>"; };
 		9A6AE0A0243F31D800AE8AAE /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		9AA869B62447320A00D4559B /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		9AA869B924474BCA00D4559B /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
+		9AA869BC24486D1400D4559B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		9AA869BE24486E8A00D4559B /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		9AB69C332445C8EB00DFB9EC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9AB69C352445CC3700DFB9EC /* AddressRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRow.swift; sourceTree = "<group>"; };
 		9AB69C372445CE1A00DFB9EC /* AddressMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressMapView.swift; sourceTree = "<group>"; };
 		9AB69C392445CE3800DFB9EC /* AddressMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressMapViewModel.swift; sourceTree = "<group>"; };
 		9AB69C3B2445D1F000DFB9EC /* AddressAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAnnotation.swift; sourceTree = "<group>"; };
-		9AB69C3D2445D52800DFB9EC /* DraggableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCardView.swift; sourceTree = "<group>"; };
+		9AB69C3D2445D52800DFB9EC /* DraggableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCard.swift; sourceTree = "<group>"; };
 		9AB69C412445EB5E00DFB9EC /* Handle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handle.swift; sourceTree = "<group>"; };
+		9AC642052449EF6D0042355A /* AddressResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressResponse.swift; sourceTree = "<group>"; };
+		9AC642092449F0F30042355A /* AddressList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressList.swift; sourceTree = "<group>"; };
 		9AD42AC8243DF05E0032D617 /* AddressSearchDenmark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressSearchDenmark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD42ACB243DF05E0032D617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AD42ACD243DF05E0032D617 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,8 +131,31 @@
 				9A6AE09B243F2D4F00AE8AAE /* ActivityIndicator.swift */,
 				9AB69C332445C8EB00DFB9EC /* MapView.swift */,
 				9AB69C3B2445D1F000DFB9EC /* AddressAnnotation.swift */,
+				9A4C7EEF244704DE009E9B9E /* RespondingTextField.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		9AA869B82447321C00D4559B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9AD42AF4243DF30E0032D617 /* SearchBar.swift */,
+				9AB69C3D2445D52800DFB9EC /* DraggableCard.swift */,
+				9AB69C412445EB5E00DFB9EC /* Handle.swift */,
+				9AA869B62447320A00D4559B /* AppButton.swift */,
+				9A4C7EEB2446F9C2009E9B9E /* FormTextField.swift */,
+				9AC642092449F0F30042355A /* AddressList.swift */,
+				9AB69C352445CC3700DFB9EC /* AddressRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9AA869BB24486D0600D4559B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9AA869BC24486D1400D4559B /* Colors.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		9AD42ABF243DF05E0032D617 = {
@@ -141,6 +184,7 @@
 				9AD42B01243DFC590032D617 /* Services */,
 				9AD42AF0243DF2A80032D617 /* Extensions */,
 				9A4B0C2B243E0941009EA3EC /* Networking */,
+				9AA869BB24486D0600D4559B /* Supporting Files */,
 				9AD42ACB243DF05E0032D617 /* AppDelegate.swift */,
 				9AD42ACD243DF05E0032D617 /* SceneDelegate.swift */,
 				9AD42AD1243DF05F0032D617 /* Assets.xcassets */,
@@ -172,14 +216,13 @@
 			isa = PBXGroup;
 			children = (
 				9A6AE09D243F2D5600AE8AAE /* UIKit */,
+				9AA869B82447321C00D4559B /* Components */,
 				9AD42AED243DF07D0032D617 /* SearchAddressView.swift */,
 				9AD42AFC243DFAA60032D617 /* SearchAddressViewModel.swift */,
-				9AD42AF4243DF30E0032D617 /* SearchBar.swift */,
-				9AB69C352445CC3700DFB9EC /* AddressRow.swift */,
 				9AB69C372445CE1A00DFB9EC /* AddressMapView.swift */,
 				9AB69C392445CE3800DFB9EC /* AddressMapViewModel.swift */,
-				9AB69C3D2445D52800DFB9EC /* DraggableCardView.swift */,
-				9AB69C412445EB5E00DFB9EC /* Handle.swift */,
+				9A4C7EE92446F27D009E9B9E /* CreateAddressView.swift */,
+				9A4C7EED244700F6009E9B9E /* CreateAddressViewModel.swift */,
 				9A6AE099243F223F00AE8AAE /* ViewFactory.swift */,
 			);
 			path = Views;
@@ -200,6 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				9AD42AFF243DFACB0032D617 /* Address.swift */,
+				9AA869B924474BCA00D4559B /* InputValidation.swift */,
+				9AA869BE24486E8A00D4559B /* UserData.swift */,
+				9AC642052449EF6D0042355A /* AddressResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,20 +359,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4C7EF0244704DE009E9B9E /* RespondingTextField.swift in Sources */,
 				9AD42B03243DFC6F0032D617 /* SearchAddressService.swift in Sources */,
 				9AB69C362445CC3700DFB9EC /* AddressRow.swift in Sources */,
+				9A4C7EEC2446F9C2009E9B9E /* FormTextField.swift in Sources */,
 				9AB69C342445C8EB00DFB9EC /* MapView.swift in Sources */,
+				9A4C7EEE244700F6009E9B9E /* CreateAddressViewModel.swift in Sources */,
+				9A4C7EEA2446F27D009E9B9E /* CreateAddressView.swift in Sources */,
 				9AB69C3C2445D1F000DFB9EC /* AddressAnnotation.swift in Sources */,
 				9A6AE09C243F2D4F00AE8AAE /* ActivityIndicator.swift in Sources */,
 				9A4B0C2A243E0615009EA3EC /* String.swift in Sources */,
 				9AB69C3A2445CE3800DFB9EC /* AddressMapViewModel.swift in Sources */,
 				9AD42ACC243DF05E0032D617 /* AppDelegate.swift in Sources */,
+				9AA869B72447320A00D4559B /* AppButton.swift in Sources */,
 				9A4B0C2D243E0951009EA3EC /* NetworkClient.swift in Sources */,
 				9A6AE09F243F31AA00AE8AAE /* SwiftUI+View.swift in Sources */,
-				9AB69C3E2445D52800DFB9EC /* DraggableCardView.swift in Sources */,
+				9AA869BA24474BCA00D4559B /* InputValidation.swift in Sources */,
+				9AB69C3E2445D52800DFB9EC /* DraggableCard.swift in Sources */,
+				9AC642062449EF6D0042355A /* AddressResponse.swift in Sources */,
 				9AD42AEE243DF07D0032D617 /* SearchAddressView.swift in Sources */,
+				9AA869BF24486E8A00D4559B /* UserData.swift in Sources */,
 				9A6AE09A243F223F00AE8AAE /* ViewFactory.swift in Sources */,
+				9AC6420A2449F0F30042355A /* AddressList.swift in Sources */,
 				9AB69C382445CE1A00DFB9EC /* AddressMapView.swift in Sources */,
+				9AA869BD24486D1400D4559B /* Colors.swift in Sources */,
 				9AB69C422445EB5E00DFB9EC /* Handle.swift in Sources */,
 				9AD42ACE243DF05E0032D617 /* SceneDelegate.swift in Sources */,
 				9AD42B00243DFACB0032D617 /* Address.swift in Sources */,

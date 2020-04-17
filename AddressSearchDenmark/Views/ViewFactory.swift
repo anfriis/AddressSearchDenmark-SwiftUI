@@ -9,17 +9,27 @@ import SwiftUI
 
 struct ViewFactory {
     
-    static let searchAddressService: SearchAddressService = AppSearchAddressService()
+    let searchAddressService: SearchAddressService
     
-    static func makeSearchAddressView() -> some View {
-        let viewModel = SearchAddressViewModel(
-            service: ViewFactory.searchAddressService
-        )
-        return SearchAddressView(viewModel: viewModel)
+    func makeSearchAddressView() -> some View {
+        let viewModel = SearchAddressViewModel(service: self.searchAddressService)
+        return SearchAddressView().environmentObject(viewModel)
     }
     
-    static func makeAddressMapView() -> some View {
-        let viewModel = AddressMapViewModel(address: Address.default)
-        return AddressMapView(viewModel: viewModel)
+    func makeAddressMapView(address: Address = Address.default) -> some View {
+        let viewModel = AddressMapViewModel(address: address)
+        return AddressMapView().environmentObject(viewModel)
     }
+    
+    func makeCreateAddressView(isPresented: Binding<Bool>) -> some View {
+        let viewModel = CreateAddressViewModel(service: self.searchAddressService)
+        return CreateAddressView(isPresented: isPresented).environmentObject(viewModel)
+    }
+    
+}
+
+extension ViewFactory {
+    
+    static let `default` = Self(searchAddressService: AppSearchAddressService())
+    
 }

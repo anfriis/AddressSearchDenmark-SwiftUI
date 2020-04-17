@@ -13,7 +13,7 @@ struct SearchBar: View {
     @Binding var isLoading: Bool
     
     @State private var showCancelButton: Bool = false
-
+    
     var onCommit: () -> Void = {}
     
     var body: some View {
@@ -21,13 +21,23 @@ struct SearchBar: View {
         HStack {
             HStack {
                 Image(systemName: "magnifyingglass")
-
-                TextField("Search", text: $searchText, onEditingChanged: { isEditing in
-                    self.showCancelButton = true
-                }, onCommit: onCommit).foregroundColor(.primary)
-
+                
+                RespondingTextField(
+                    placeholder: "Search",
+                    text: $searchText,
+                    returnKey: ReturnKey(
+                        type: .search,
+                        shouldResignFirstResponder: true,
+                        handler: onCommit
+                    ),
+                    onEditingChanged: { isEditing in
+                        self.showCancelButton = isEditing
+                }
+                )
+                    .frame(height: 25)
+                
                 ActivityIndicator(isAnimating: $isLoading, style: .medium)
-
+                
                 Button(action: {
                     self.searchText = ""
                 }) {
@@ -38,12 +48,12 @@ struct SearchBar: View {
             .foregroundColor(.secondary)
             .background(Color(.secondarySystemBackground))
             .cornerRadius(10.0)
-
-            if showCancelButton  {
+            
+            if self.showCancelButton  {
                 Button("Cancel") {
-                        UIApplication.shared.endEditing(true) // this must be placed before the other commands here
-                        self.searchText = ""
-                        self.showCancelButton = false
+                    UIApplication.shared.endEditing(true) // this must be placed before the other commands here
+                    self.searchText = ""
+                    self.showCancelButton = false
                 }
                 .foregroundColor(Color(.systemBlue))
             }

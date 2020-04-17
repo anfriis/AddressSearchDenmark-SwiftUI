@@ -8,29 +8,39 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class SearchAddressViewModel: ObservableObject {
+
+    private let service: SearchAddressService
+    private var disposables = Set<AnyCancellable>()
     
     @Published var addresses: [Address] = []
     @Published var searchText: String = ""
     @Published var isLoading: Bool = false
     
-    private let service: SearchAddressService
-    private var disposables = Set<AnyCancellable>()
-    
+    @Published var newAddresses: [Address] = []
     
     init(service: SearchAddressService) {
         self.service = service
+    
+        self.service.newAddressesSubject
+            .assign(to: \.newAddresses, on: self)
+            .store(in: &self.disposables)
         
-        $searchText
-            .debounce(for: 0.5, scheduler: RunLoop.main)
+        self.$searchText
+            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .removeDuplicates()
-            .filter { $0.isEmpty == false }
-            .sink(receiveValue: queryAddresses)
+            .sink(receiveValue: self.queryAddresses)
             .store(in: &self.disposables)
     }
     
     func queryAddresses(searchText: String) {
+        guard searchText.isEmpty == false else {
+            self.addresses = []
+            return
+        }
+        
         self.isLoading = true
         self.service
             .queryAddresses(searchText: searchText)
@@ -50,6 +60,10 @@ class SearchAddressViewModel: ObservableObject {
                     self.addresses = addresses
             })
             .store(in: &disposables)
+    }
+    
+    func delete(at offset: IndexSet) {
+        self.service.removeAddresses(at: offset)
     }
     
 }

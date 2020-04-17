@@ -9,12 +9,6 @@
 import Foundation
 import MapKit
 
-struct AddressResponse: Codable {
-    let id: String
-    let x, y: Double
-    let betegnelse: String
-}
-
 struct Address: Codable, Identifiable {
     let id: String
     let title: String

@@ -18,5 +18,4 @@ class AddressMapViewModel: ObservableObject {
         self.address = address
     }
     
-    
 }

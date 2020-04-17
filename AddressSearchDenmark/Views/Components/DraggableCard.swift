@@ -8,10 +8,10 @@
 
 import SwiftUI
 
-struct DraggableCardView<Content: View>: View {
+struct DraggableCard<Content: View>: View {
     
     var content: () -> Content
-
+    
     @State var position: CardPosition = .bottom
     @GestureState private var dragState = DragState.none
     
@@ -24,18 +24,18 @@ struct DraggableCardView<Content: View>: View {
     }
     
     var body: some View {
-            VStack {
-                Handle()
-                    .padding(.top, 20)
-                self.content()
-            }
-            .frame(
-                width: UIScreen.main.bounds.width - (self.dragState.isDragging == false && self.position == .bottom ? 30 : 0),
-                height: UIScreen.main.bounds.height
-            )
-            .background(Color.white)
+        VStack {
+            Handle()
+                .padding(.top, 20)
+            self.content()
+        }
+        .frame(
+            width: UIScreen.main.bounds.width - (self.dragState.isDragging == false && self.position == .bottom ? 30 : 0),
+            height: UIScreen.main.bounds.height
+        )
+            .background(Color(.systemBackground))
             .cornerRadius(20)
-            .foregroundColor(.white)
+            .foregroundColor(.primary)
             .shadow(radius: 4)
             .offset(y: self.position.offset + self.dragState.translation.height)
             .animation(self.dragState.isDragging ? nil : .interpolatingSpring(stiffness: 200, damping: 30, initialVelocity: 10))
@@ -106,10 +106,10 @@ enum DragState {
     }
 }
 
-struct DraggableCardView_Previews: PreviewProvider {
+struct DraggableCard_Previews: PreviewProvider {
     static var previews: some View {
-        DraggableCardView() {
-            Text("Hej")
+        DraggableCard() {
+            Text("Hello")
         }
     }
 }

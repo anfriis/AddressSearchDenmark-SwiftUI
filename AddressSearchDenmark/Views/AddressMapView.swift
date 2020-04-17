@@ -10,20 +10,19 @@ import SwiftUI
 
 struct AddressMapView: View {
     
-    @ObservedObject var viewModel: AddressMapViewModel
+    @EnvironmentObject var viewModel: AddressMapViewModel
     
     var body: some View {
         ZStack {
             MapView(coordinate: viewModel.address.coordinate)
                 .edgesIgnoringSafeArea(.top)
             
-            DraggableCardView() {
+            DraggableCard() {
                 VStack {
                     VStack(alignment: .leading) {
                         Text(self.viewModel.address.title).font(.headline)
                         Text(self.viewModel.address.subtitle)
                     }
-                    .foregroundColor(.black)
                     Spacer()
                 }
                 .padding(10)
@@ -35,6 +34,6 @@ struct AddressMapView: View {
 
 struct AddressMapView_Previews: PreviewProvider {
     static var previews: some View {
-        ViewFactory.makeAddressMapView()
+        ViewFactory.default.makeAddressMapView()
     }
 }

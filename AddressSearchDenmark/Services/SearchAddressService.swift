@@ -10,10 +10,23 @@ import Foundation
 import Combine
 
 protocol SearchAddressService {
+    var newAddressesSubject: PassthroughSubject<[Address], Never> { get }
     func queryAddresses(searchText: String) -> AnyPublisher<[Address], Error>
+    func addNewAddress(address: Address)
+    func removeAddresses(at offsets: IndexSet)
 }
 
 class AppSearchAddressService: SearchAddressService {
+
+    private var disposables = Set<AnyCancellable>()
+    @Published var newAddresses: [Address] = []
+    
+    lazy var newAddressesSubject: PassthroughSubject<[Address], Never> = {
+        let sub = PassthroughSubject<[Address], Never>()
+        self.$newAddresses.subscribe(sub)
+            .store(in: &self.disposables)
+        return sub
+    }()
     
     func queryAddresses(searchText: String) -> AnyPublisher<[Address], Error> {
         AddressAPI
@@ -24,4 +37,12 @@ class AppSearchAddressService: SearchAddressService {
         .eraseToAnyPublisher()
     }
     
+    func addNewAddress(address: Address) {
+        self.newAddresses.append(address)
+    }
+ 
+    func removeAddresses(at offsets: IndexSet) {
+        self.newAddresses.remove(atOffsets: offsets)
+    }
+
 }

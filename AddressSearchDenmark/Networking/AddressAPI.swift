@@ -24,7 +24,7 @@ extension AddressAPI {
             URLQueryItem(name: "q", value: searchText)
         ]
         components?.queryItems = queryItems
-        print("comp: " + components.debugDescription)
+
         guard let url = components?.url else {
             fatalError("Invalid URL: \(String(describing: components?.debugDescription))")
         }

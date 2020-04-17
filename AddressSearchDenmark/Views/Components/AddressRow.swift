@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AddressRow: View {
 
-    @State var address: Address
+    var address: Address
     
     var body: some View {
         VStack(alignment: .leading) {

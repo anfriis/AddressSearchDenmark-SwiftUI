@@ -9,7 +9,12 @@
 import SwiftUI
 
 extension View {
-    func resignKeyboardOnDragGesture() -> some View {
-        return modifier(ResignKeyboardOnDragGesture())
+ 
+    // Prints out all the given variables.
+    // Can be used to debug variables in Views
+    func Print(_ vars: Any...) -> some View {
+        vars.forEach { print($0) }
+        return EmptyView()
     }
+    
 }
