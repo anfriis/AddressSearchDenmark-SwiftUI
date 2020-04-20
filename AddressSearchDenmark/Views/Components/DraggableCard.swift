@@ -71,7 +71,7 @@ struct DraggableCard<Content: View>: View {
 }
 
 enum CardPosition: Double {
-    case top = 0.95
+    case top = 0.85
     case middle = 0.5
     case bottom = 0.3
     

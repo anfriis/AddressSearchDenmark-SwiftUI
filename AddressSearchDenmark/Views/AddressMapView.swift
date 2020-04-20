@@ -15,8 +15,7 @@ struct AddressMapView: View {
     var body: some View {
         ZStack {
             MapView(coordinate: viewModel.address.coordinate)
-                .edgesIgnoringSafeArea(.top)
-            
+                        
             DraggableCard() {
                 VStack {
                     VStack(alignment: .leading) {
@@ -28,6 +27,7 @@ struct AddressMapView: View {
                 .padding(10)
             }
         }
+        .navigationBarTitle("Map", displayMode: .inline)
     }
     
 }
