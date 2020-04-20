@@ -8,14 +8,20 @@
 
 import SwiftUI
 
-struct ResignKeyboardOnDragGesture: ViewModifier {
-    
-    var gesture = DragGesture().onChanged{_ in
-        UIApplication.shared.endEditing(true)
-    }
+struct HiddenNavigationBar: ViewModifier {
     
     func body(content: Content) -> some View {
-        content.gesture(gesture)
+        content
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+    }
+    
+}
+
+extension View {
+    
+    func hiddenNavigationBarStyle() -> some View {
+        ModifiedContent(content: self, modifier: HiddenNavigationBar())
     }
     
 }
